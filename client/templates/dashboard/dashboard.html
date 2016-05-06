@@ -3,7 +3,7 @@
     <div class="row text-center">
       <h1>Press Feed</h1>
       <p class="lead">Give your PR team access to dynamically control the Press Links on your Website. They control what content is placed where. THey can reorder update remove and take down press</p>
-      <p></p>
+      <p>Developers: To add the Press Feed on a Web Page, simply add Template <code>pressFeedFull</code> and boom.</p>
     </div>
     <div class="row text-center">
       {{> createPressFeed}}
@@ -80,14 +80,20 @@
     </thead>
     <tbody>
       {{#each allPressFeeds}}
-        <tr id='{{_id}}'>
-          <td></td>
+        <tr id="{{_id}}">
+          <td>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" class="activatePressFeed" {{active}}>
+              </label>
+            </div>
+          </td>
           <td>{{position}}</td>
           <td>{{headline}}</td>
           <td>{{blurb}}</td>
           <td><a href='{{articleUrl}}'>Preview Article</a></td>
           <td><a href='{{logoUrl}}'> Preview Image</a></td>
-          <td></td>
+          <td><button  class='deletePressFeed btn btn-sm btn-danger'>Delete</button></td>
         </tr>
       {{/each}}
     </tbody>

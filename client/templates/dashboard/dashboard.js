@@ -44,5 +44,18 @@ Template.allPressFeeds.helpers({
     return ReactionCore.Collections.PressFeed.find({}, {
       sort: {position: 1}
     });
+  },
+  active: function () {
+    return this.visible ? 'checked' : '';
+  }
+});
+
+Template.allPressFeeds.events({
+  'change .activatePressFeed': function (event) {
+    Meteor.call('pressFeed/changeVisibility', this._id, this.visible)
+  },
+  'click .deletePressFeed': function (event) {
+    event.preventDefault();
+    Meteor.call('pressFeed/removePressFeed', this._id);
   }
 });
