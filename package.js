@@ -20,6 +20,7 @@ Package.onUse(function (api) {
 
   api.addFiles([
     'server/registry.js',
+    'server/browserPolicy.js',
     'server/publications/pressFeed.js',
     'server/methods/pressFeed.js'
   ], 'server');
@@ -34,6 +35,9 @@ Package.onUse(function (api) {
     'client/templates/dashboard/dashboard.js',
     'client/templates/settings/settings.html',
     'client/templates/settings/settings.js',
+    'client/templates/pressFeeds/detailed/pressFeedDetails.html',
+    'client/templates/pressFeeds/detailed/pressFeedDetails.js',
+    'client/templates/pressFeeds/detailed/pressFeedDetails.css'
   ], 'client');
 
 });

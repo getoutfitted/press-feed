@@ -12,3 +12,12 @@ Meteor.publish('allPressFeed', function () {
   }
   return this.ready();
 });
+
+Meteor.publish('activePressFeed', function () {
+  let shopId = ReactionCore.getShopId();
+  return ReactionCore.Collections.PressFeed.find({
+    shopId: shopId,
+    visible: true
+  });
+  return this.ready();
+});

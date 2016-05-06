@@ -19,17 +19,23 @@ Template.createPressFeed.events({
       position: parseInt(event.target.position.value, 10),
       visible: event.target.visible.checked
     }
-    Meteor.call('pressFeed/addArticle', feedDetails);
-    event.target.headline.value = '';
-    event.target.blurb.value = '';
-    event.target.logoUrl.value = '';
-    event.target.articleUrl.value = '';
-    event.target.position.value = '';
-    event.target.visible.checked = false;
-    Alerts.removeSeen();
-    Alerts.add(`${feedDetails.headline} was added to your press feed.`, 'success', {
-            autoHide: true
-          });
+    if (event.target.blurb.value.length <= 144 ){
+      Meteor.call('pressFeed/addArticle', feedDetails);
+      event.target.headline.value = '';
+      event.target.blurb.value = '';
+      event.target.logoUrl.value = '';
+      event.target.articleUrl.value = '';
+      event.target.position.value = '';
+      event.target.visible.checked = false;
+      Alerts.removeSeen();
+      Alerts.add(`${feedDetails.headline} was added to your press feed.`, 'success', {
+              autoHide: true
+      });
+    } else {
+      Alerts.add(`${feedDetails.blurb} is above 144 Character Count`, 'danger', {
+              autoHide: true
+      });
+    }
   }
 });
 

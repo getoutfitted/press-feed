@@ -8,10 +8,8 @@ Meteor.methods({
       position: Number,
       visible: Boolean
     });
-    console.log('pressfeed', pressFeed)
     let pressFeedWithStoreId = pressFeed;
     pressFeedWithStoreId.shopId = ReactionCore.getShopId();
-    console.log('final', pressFeedWithStoreId)
     ReactionCore.Collections.PressFeed.insert(pressFeedWithStoreId);
   }
 });

@@ -13,6 +13,11 @@
         {{> allPressFeeds}}
       </div>
     {{/if}}
+    <div class='row'>
+      <h2>Preview Your Active Feed</h2>
+      <hr>
+      {{> pressFeedFull}}
+    </div>
   </div>
 </template>
 
@@ -25,7 +30,7 @@
       <div class='col-md-6'>
         <div class="form-group">
           <label for="headline">Headline</label>
-          <input required type="text"  name="headline" class="form-control" id="headline" placeholder="Ex: Title, Article Name etc. ">
+          <input required name="headline" class="form-control" id="headline" placeholder="Ex: Title, Article Name etc. ">
         </div>
         <div class="form-group">
           <label for="blurb">Article Blurb</label>
