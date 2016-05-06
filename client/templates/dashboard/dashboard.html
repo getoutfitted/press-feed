@@ -16,7 +16,11 @@
     <div class='row'>
       <h2>Preview Your Active Feed</h2>
       <hr>
-      {{> pressFeedFull}}
+      <h3>Full Articles</h3>
+        {{> pressFeedFull}}
+      <hr>
+      <h3>Banner Logos</h3>
+        {{> pressFeedLogos}}
     </div>
   </div>
 </template>
@@ -88,7 +92,7 @@
               </label>
             </div>
           </td>
-          <td>{{position}}</td>
+          <td><input type='number' min="1" class='form-control positionChange' value='{{position}}'></td>
           <td>{{headline}}</td>
           <td>{{blurb}}</td>
           <td><a href='{{articleUrl}}'>Preview Article</a></td>

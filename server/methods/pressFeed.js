@@ -30,5 +30,17 @@ Meteor.methods({
       _id: _id,
       shopId: ReactionCore.getShopId()
     });
+  },
+  'pressFeed/updatePosition': function (_id, position) {
+    check(_id, String);
+    check(position, Number);
+    ReactionCore.Collections.PressFeed.update({
+      _id: _id,
+      shopId: ReactionCore.getShopId()
+    }, {
+      $set: {
+        position: position
+      }
+    });
   }
 });

@@ -3,6 +3,11 @@ ReactionCore.registerPackage({
   name: 'press-feed',
   icon: 'fa fa-fa-rss',
   autoEnable: false,
+  settings: {
+    public: {
+      grayScaleImages: true
+    }
+  },
     registry: [{
     route: '/dashboard/press-feed',
     provides: 'dashboard',

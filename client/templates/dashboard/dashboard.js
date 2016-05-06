@@ -57,5 +57,19 @@ Template.allPressFeeds.events({
   'click .deletePressFeed': function (event) {
     event.preventDefault();
     Meteor.call('pressFeed/removePressFeed', this._id);
+  },
+  'change .positionChange': function (event) {
+    const newPosition = parseInt(event.target.value, 10);
+    const positionAvailable = ReactionCore.Collections.PressFeed.find({
+      position: newPosition
+    }).count() === 0;
+    if (positionAvailable) {
+      Meteor.call('pressFeed/updatePosition', this._id, newPosition);
+      Alerts.removeSeen();
+      Alerts.add(`Position updated`, 'success', {autoHide: true});
+    } else {
+      Alerts.removeSeen();
+      Alerts.add(`Position ${newPosition} is already in use.`, 'danger', {autoHide: true});
+    }
   }
 });

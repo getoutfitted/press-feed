@@ -37,7 +37,10 @@ Package.onUse(function (api) {
     'client/templates/settings/settings.js',
     'client/templates/pressFeeds/detailed/pressFeedDetails.html',
     'client/templates/pressFeeds/detailed/pressFeedDetails.js',
-    'client/templates/pressFeeds/detailed/pressFeedDetails.css'
+    'client/templates/pressFeeds/detailed/pressFeedDetails.css',
+    'client/templates/pressFeeds/logos/pressFeedLogos.html',
+    'client/templates/pressFeeds/logos/pressFeedLogos.js',
+    'client/templates/pressFeeds/logos/pressFeedLogos.css'
   ], 'client');
 
 });

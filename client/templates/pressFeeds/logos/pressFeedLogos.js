@@ -1,8 +1,8 @@
-Template.pressFeedFull.onCreated(function () {
+Template.pressFeedLogos.onCreated(function () {
   this.subscribe('activePressFeed');
 });
 
-Template.pressFeedFull.helpers({
+Template.pressFeedLogos.helpers({
   pressFeed: function () {
     return ReactionCore.Collections.PressFeed.find({
       shopId: ReactionCore.getShopId(),
