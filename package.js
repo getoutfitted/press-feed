@@ -20,6 +20,7 @@ Package.onUse(function (api) {
 
   api.addFiles([
     'server/registry.js',
+    'server/publications/pressFeed.js',
     'server/methods/pressFeed.js'
   ], 'server');
 

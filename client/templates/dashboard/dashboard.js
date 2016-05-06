@@ -1,4 +1,14 @@
-Template.pressFeedDashboard.events({
+Template.pressFeedDashboard.onCreated(function () {
+  this.subscribe('allPressFeed');
+});
+
+Template.pressFeedDashboard.helpers({
+  anyPressFeeds: function () {
+    return ReactionCore.Collections.PressFeed.find().count() > 0;
+  }
+});
+
+Template.createPressFeed.events({
   'submit .addPressFeed': function (event) {
     event.preventDefault();
     const feedDetails = {
@@ -20,5 +30,13 @@ Template.pressFeedDashboard.events({
     Alerts.add(`${feedDetails.headline} was added to your press feed.`, 'success', {
             autoHide: true
           });
+  }
+});
+
+Template.allPressFeeds.helpers({
+  allPressFeeds: function () {
+    return ReactionCore.Collections.PressFeed.find({}, {
+      sort: {position: 1}
+    });
   }
 });
