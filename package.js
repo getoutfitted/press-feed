@@ -17,7 +17,6 @@ Package.onUse(function (api) {
   api.use('reactioncommerce:reaction-router');
   api.use('reactioncommerce:reaction-collections');
   api.use('momentjs:moment@2.10.6');
-  api.use('aldeed:autoform@4.0.0');
 
   api.addFiles([
     'server/registry.js'

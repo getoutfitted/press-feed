@@ -11,8 +11,7 @@ ReactionCore.Schemas.PressFeed = new SimpleSchema({
   logoUrl: {
     type: String,
     label: 'URL for Article Branding',
-    regEx: SimpleSchema.RegEx.Url,
-    optional: true
+    regEx: SimpleSchema.RegEx.Url
   },
   articleUrl: {
     type: String,

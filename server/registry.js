@@ -6,12 +6,12 @@ ReactionCore.registerPackage({
     registry: [{
     route: '/dashboard/press-feed',
     provides: 'dashboard',
-    name: 'pressFeed',
+    name: 'pressFeedDashboard',
     label: 'Press Feed',
     description: 'List the relevent press feeds for your company',
     container: 'getoutfitted',
     icon: 'fa fa-rss',
-    template: 'pressFeed',
+    template: 'pressFeedDashboard',
     workflow: 'coreWorkflow',
     priority: 3
   }, {
