@@ -28,12 +28,16 @@ ReactionCore.Schemas.PressFeed = new SimpleSchema({
     type: Boolean,
     label: 'Display this Article?',
     defaultValue: false
+  },
+  shopId: {
+    type: String,
+    label: 'Store Id'
   }
 });
 
 ReactionCore.Schemas.PressFeedPackageConfig = new SimpleSchema([
   ReactionCore.Schemas.PackageConfig, {
-    'settings.grayScaleImages': {
+    'settings.public.grayScaleImages': {
       type: Boolean,
       label: 'Display Images in GrayScale',
       optional: true

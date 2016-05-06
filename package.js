@@ -19,12 +19,13 @@ Package.onUse(function (api) {
   api.use('momentjs:moment@2.10.6');
 
   api.addFiles([
-    'server/registry.js'
+    'server/registry.js',
+    'server/methods/pressFeed.js'
   ], 'server');
 
   api.addFiles([
-    'common/collections.js',
-    'common/schemas.js'
+    'common/schemas.js',
+    'common/collections.js'
   ]);
 
   api.addFiles([
