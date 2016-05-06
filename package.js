@@ -17,9 +17,22 @@ Package.onUse(function (api) {
   api.use('reactioncommerce:reaction-router');
   api.use('reactioncommerce:reaction-collections');
   api.use('momentjs:moment@2.10.6');
+  api.use('aldeed:autoform@4.0.0');
 
   api.addFiles([
     'server/registry.js'
   ], 'server');
+
+  api.addFiles([
+    'common/collections.js',
+    'common/schemas.js'
+  ]);
+
+  api.addFiles([
+    'client/templates/dashboard/dashboard.html',
+    'client/templates/dashboard/dashboard.js',
+    'client/templates/settings/settings.html',
+    'client/templates/settings/settings.js',
+  ], 'client');
 
 });

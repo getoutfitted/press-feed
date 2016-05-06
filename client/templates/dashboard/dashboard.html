@@ -1,3 +1,45 @@
 <template name='pressFeed'>
+  <div class='container'>
+    <div class='row text-center'>
+      <h1>Press Feed</h1>
+      <p class='lead'>Give your PR team access to dynamically control the Press Links on your Website. They control what content is placed</p>
+    </div>
+    <div class='row text-center'>
+      <h3>Add A New Press</h3>
+      <div class='row'>
+        <div class='col-md-4 col-md-offset-4'>
+          <form>
+            <div class="form-group">
+              <label for="headline">Headline</label>
+              <input required type="text" class="form-control" id="headline" placeholder="Ex: Title, Article Name etc. ">
+            </div>
+            <div class="form-group">
+              <label for="blurb">Article Blurb</label>
+              <textarea required rows="3" class="form-control" id="headline" placeholder="144 Characters Max"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="logoUrl">Image Url</label>
+              <input  type="url" class="form-control" id="logoUrl" placeholder="Ex: http://my-image-location.com ">
+            </div>
+            <div class="form-group">
+              <label for="articleUrl">Full Article Url</label>
+              <input  required type="url" class="form-control" id="articleUrl" placeholder="Ex: http://my-news-source.com/my-article ">
+            </div>
+            <div class="form-group">
+              <label for="position">Full Article Url</label>
+              <input  required type="number" class="form-control" id="position" placeholder="Ex: 10">
+            </div>
 
+            <div class="checkbox">
+              <label>
+                <input id="visible" type="checkbox">
+                Make this Press Feed Public?
+              </label>
+            </div>
+            <button type="submit" class="btn btn-default">Send invitation</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>

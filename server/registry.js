@@ -1,6 +1,6 @@
 ReactionCore.registerPackage({
   label: 'Press Feed',
-  name: 'getoutfitted-press-feed',
+  name: 'press-feed',
   icon: 'fa fa-fa-rss',
   autoEnable: false,
     registry: [{
