@@ -8,7 +8,8 @@ Template.pressFeedLogos.helpers({
       shopId: ReactionCore.getShopId(),
       visible: true
     }, {
-      sort: { position: 1 }
+      sort: { position: 1 },
+      limit: 6
     });
   },
   grayEnabled: function () {
