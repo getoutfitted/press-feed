@@ -1,3 +1,16 @@
 <template name='pressFeedSettings'>
+<div class="panel-body">
+    {{#autoForm
+        collection="ReactionCore.Collections.Packages"
+        schema="ReactionCore.Schemas.PressFeedPackageConfig"
+        doc=packageData
+        type="update"
+        id="press-feed-update-form"
+        }}
 
+    <h2>Display Images in Gray?</h2>
+    {{>afQuickField  name='settings.public.grayScaleImages'}}
+    <button type="submit" class="btn btn-primary pull-right">Save Changes</button>
+      {{/autoForm}}
+  </div>
 </template>

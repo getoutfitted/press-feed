@@ -1,17 +1,22 @@
 ReactionCore.registerPackage({
   label: 'Press Feed',
-  name: 'getoutfitted-press-feed',
+  name: 'press-feed',
   icon: 'fa fa-fa-rss',
   autoEnable: false,
+  settings: {
+    public: {
+      grayScaleImages: true
+    }
+  },
     registry: [{
     route: '/dashboard/press-feed',
     provides: 'dashboard',
-    name: 'pressFeed',
+    name: 'pressFeedDashboard',
     label: 'Press Feed',
     description: 'List the relevent press feeds for your company',
     container: 'getoutfitted',
     icon: 'fa fa-rss',
-    template: 'pressFeed',
+    template: 'pressFeedDashboard',
     workflow: 'coreWorkflow',
     priority: 3
   }, {

@@ -1,0 +1,25 @@
+.full-size {
+}
+
+.img-responsive.logoUrl {
+  margin-left: auto;
+  margin-right: auto;
+  height: 200px;
+}
+
+.pressText {
+  height: 110px;
+  padding-bottom: 20px;
+}
+
+.headlineText {
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.grayScale {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}

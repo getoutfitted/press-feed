@@ -1,0 +1,15 @@
+<template name='pressFeedLogos'>
+  <div class='container'>
+    <div class='row'>
+    {{#each pressFeed}}
+      <a style="cursor:pointer;" target='_blank' href='{{articleUrl}}'>
+        <div class='col-xs-4 col-sm-2 col-md-2 col-lg-2'>
+          <div class='full-size'>
+            <img class='img-responsive bannerLogoUrl {{grayEnabled}}' src='{{logoUrl}}'>
+          </div>
+        </div>
+      </a>
+    {{/each}}
+    </div>
+  </div>
+</template>

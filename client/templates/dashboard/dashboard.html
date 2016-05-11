@@ -1,3 +1,107 @@
-<template name='pressFeed'>
-
+<template name="pressFeedDashboard">
+  <div class="container">
+    <div class="row text-center">
+      <h1>Press Feed</h1>
+      <p class="lead">Give your PR team access to dynamically control the Press Links on your Website. They control what content is placed where. THey can reorder update remove and take down press</p>
+      <p><strong>Developers:</strong> To add the Press Feed on a Web Page, simply add Template <code>pressFeedFull</code> and boom.</p>
+      <p>To display just logos from up to top 6 feeds, use template <code>pressFeedLogos</code> and voila!</p>
+    </div>
+    <div class="row text-center">
+      {{> createPressFeed}}
+    </div>
+    {{#if anyPressFeeds}}
+      <div class='row'>
+        {{> allPressFeeds}}
+      </div>
+    {{/if}}
+    <div class='row'>
+      <h2>Preview Your Active Feed</h2>
+      <hr>
+      <h3>Full Articles</h3>
+        {{> pressFeedFull}}
+      <hr>
+      <h3>Banner Logos</h3>
+        {{> pressFeedLogos}}
+    </div>
+  </div>
 </template>
+
+<template name='createPressFeed'>
+  <div class='text-center'>
+    <h3>Add A New Press</h3>
+  </div>
+  <form class="addPressFeed">
+    <div class='row'>
+      <div class='col-md-6'>
+        <div class="form-group">
+          <label for="headline">Headline</label>
+          <input required name="headline" class="form-control" id="headline" placeholder="Ex: Title, Article Name etc. ">
+        </div>
+        <div class="form-group">
+          <label for="blurb">Article Blurb</label>
+          <textarea required rows="3" type="textarea" class="form-control" id="blurb"  name="blurb" placeholder="144 Characters Max"></textarea>
+        </div>
+      </div>
+      <div class='col-md-6'>
+        <div class="form-group">
+          <label for="logoUrl">Image Url</label>
+          <input  required type="url" class="form-control" name ="logoUrl" id="logoUrl" placeholder="Ex: http://my-image-location.com ">
+        </div>
+        <div class="form-group">
+          <label for="articleUrl">Full Article Url</label>
+          <input  required type="url" name="articleUrl" class="form-control" id="articleUrl" placeholder="Ex: http://my-news-source.com/my-article ">
+        </div>
+        <div class="form-group">
+          <label for="position">Full Article Url</label>
+          <input  name="position" required type="number" class="form-control" id="position" placeholder="Ex: 10">
+        </div>
+      </div>
+    </div>
+    <div class='row text-center'>
+      <div class="checkbox">
+        <label>
+          <input id="visible" name="visible" type="checkbox">
+          Make this Press Feed Public?
+        </label>
+      </div>
+      <button type="submit" class="btn btn-default">Add This Press Feed</button>
+    </div>
+  </form>
+</template>
+
+<template name='allPressFeeds'>
+  <h3>Existing Press Feeds</h3>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>Active?</th>
+        <th>Position</th>
+        <th>Headline</th>
+        <th>Blurb</th>
+        <th>Article URL</th>
+        <th>Image</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each allPressFeeds}}
+        <tr id="{{_id}}">
+          <td>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" class="activatePressFeed" {{active}}>
+              </label>
+            </div>
+          </td>
+          <td><input type='number' min="1" class='form-control positionChange' value='{{position}}'></td>
+          <td>{{headline}}</td>
+          <td>{{blurb}}</td>
+          <td><a href='{{articleUrl}}'>Preview Article</a></td>
+          <td><a href='{{logoUrl}}'> Preview Image</a></td>
+          <td><button  class='deletePressFeed btn btn-sm btn-danger'>Delete</button></td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</template>
+
