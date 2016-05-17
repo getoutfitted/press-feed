@@ -2,7 +2,7 @@ ReactionCore.registerPackage({
   label: 'Press Feed',
   name: 'press-feed',
   icon: 'fa fa-fa-rss',
-  autoEnable: false,
+  autoEnable: true,
   settings: {
     public: {
       grayScaleImages: true
